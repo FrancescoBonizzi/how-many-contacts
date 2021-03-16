@@ -15,6 +15,9 @@
         android:layout_marginTop="5dp"
         android:textAlignment="center"/>
 
+    <!-- TODO Metti il pulsantino in alto come nelle app android,
+    TODO INFO, THIS APP WON'T GRAB OR STORE YOUR PERSONAL DATA -->
+
     <TextView
         android:id="@+id/txtContactsCount"
         android:layout_width="match_parent"
