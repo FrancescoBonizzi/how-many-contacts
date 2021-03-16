@@ -23,6 +23,12 @@
         android:layout_margin="20dp"
         android:textSize="20sp"
         tools:text="10 contacts" />
+    <Button
+        android:id="@+id/btnRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Refresh" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:orientation="horizontal"

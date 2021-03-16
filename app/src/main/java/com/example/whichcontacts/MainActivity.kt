@@ -17,6 +17,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        binding.btnRefresh.setOnClickListener {
+            refreshData()
+        }
+
+        refreshData()
     }
 
     override fun onRequestPermissionsResult(
@@ -46,12 +52,16 @@ class MainActivity : AppCompatActivity() {
     private fun refreshData() {
         try {
 
+            if (!PermissionHelpers.hasOrGetReadContactsPermission(this)) {
+                return
+            }
+
             val appContactsCounter = AppContactsCounter()
             val contactsCountResult = appContactsCounter.countContacts(this)
 
             binding.txtContactsCount.text = "${contactsCountResult.allContactsCount} contacts"
             binding.txtTelegramContactsCount.text =
-                "${contactsCountResult.telegramContactCount} contacts (${(contactsCountResult.telegramContactCount / contactsCountResult.allContactsCount) * 100}%"
+                "${contactsCountResult.telegramContactCount} contacts (${(contactsCountResult.telegramContactCount / contactsCountResult.allContactsCount) * 100}%)"
 
         } catch (ex: Exception) {
             logger.error(ex)

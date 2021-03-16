@@ -1,25 +1,25 @@
 package com.example.whichcontacts
 
 import android.Manifest
+import android.app.Activity
 import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 
 class PermissionHelpers {
 
-    companion object
-    {
+    companion object {
         const val PermissionSelectContacts = 1
 
-        fun hasOrGetReadContactsPermission(fragment: Fragment) : Boolean
-        {
+        fun hasOrGetReadContactsPermission(activity: Activity): Boolean {
             if (ContextCompat.checkSelfPermission(
-                fragment.requireContext(),
-                Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
-            {
-                fragment.requestPermissions(
+                    activity,
+                    Manifest.permission.READ_CONTACTS
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                activity.requestPermissions(
                     arrayOf(Manifest.permission.READ_CONTACTS),
-                    PermissionSelectContacts)
+                    PermissionSelectContacts
+                )
                 return false
             }
 
