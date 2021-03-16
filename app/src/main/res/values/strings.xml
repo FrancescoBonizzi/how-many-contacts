@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">WhichContacts</string>
-    <string name="title">Which contacts are on...?</string>
+    <string name="title">How many contacts have...?</string>
 </resources>

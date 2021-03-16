@@ -9,10 +9,14 @@ android {
 
     defaultConfig {
         applicationId "com.example.whichcontacts"
-        minSdkVersion 23
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "v1." + new Date().format('dd.MM.yyyy')
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     buildTypes {
@@ -33,10 +37,12 @@ android {
         }
 
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
