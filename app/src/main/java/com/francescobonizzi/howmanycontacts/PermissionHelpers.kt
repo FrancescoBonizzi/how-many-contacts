@@ -10,7 +10,7 @@ class PermissionHelpers {
     companion object {
         const val PermissionSelectContacts = 1
 
-        fun hasOrGetReadContactsPermission(activity: Activity): Boolean {
+        fun hasOrAskReadContactsPermission(activity: Activity): Boolean {
             if (ContextCompat.checkSelfPermission(
                     activity,
                     Manifest.permission.READ_CONTACTS

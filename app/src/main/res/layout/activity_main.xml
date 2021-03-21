@@ -33,6 +33,8 @@
         android:layout_gravity="center"
         android:text="Refresh" />
 
+<!--    TODO: fai una recycler view mettendo tu gli item a mano, ma ordinato per %-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -40,7 +42,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageViewTelegram"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@drawable/logo_telegram"
@@ -54,18 +56,93 @@
             android:layout_height="wrap_content"
             tools:text="30 contatti, 20%"
             android:layout_marginStart="10dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/imageViewTelegram"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Telegram"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintEnd_toEndOf="@+id/imageViewTelegram"
+            app:layout_constraintStart_toStartOf="@+id/imageViewTelegram"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewTelegram" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageViewWhatsApp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/logo_whatsaspp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtWhatsAppContactsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="30 contatti, 20%"
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewWhatsApp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WhatsApp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewWhatsApp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewWhatsApp"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewWhatsApp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageViewSignal"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/logo_signal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtSignalContactsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="30 contatti, 20%"
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewSignal"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Signal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewSignal"
+            app:layout_constraintStart_toStartOf="@+id/imageViewSignal"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewSignal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </LinearLayout>

@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     private fun refreshData() {
         try {
 
-            if (!PermissionHelpers.hasOrGetReadContactsPermission(this)) {
+            if (!PermissionHelpers.hasOrAskReadContactsPermission(this)) {
                 return
             }
 
@@ -61,7 +61,11 @@ class MainActivity : AppCompatActivity() {
 
             binding.txtContactsCount.text = "${contactsCountResult.allContactsCount} contacts"
             binding.txtTelegramContactsCount.text =
-                "${contactsCountResult.telegramContactCount} contacts (${(contactsCountResult.telegramContactCount / contactsCountResult.allContactsCount) * 100}%)"
+                "${contactsCountResult.telegramContactsCount} contacts (${contactsCountResult.telegramContactsPercentage}%)"
+            binding.txtWhatsAppContactsCount.text =
+                "${contactsCountResult.whatsAppContactsCount} contacts (${contactsCountResult.whatsAppContactsPercentage}%)"
+            binding.txtSignalContactsCount.text =
+                "${contactsCountResult.signalContactsCount} contacts (${contactsCountResult.signalContactsPercentage}%)"
 
         } catch (ex: Exception) {
             logger.error(ex)
