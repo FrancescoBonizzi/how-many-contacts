@@ -1,10 +1,10 @@
-package com.example.whichcontacts.logic
+package com.francescobonizzi.howmanycontacts.logic
 
 import android.app.Activity
 import android.content.ContentResolver
 import android.provider.ContactsContract
-import com.example.whichcontacts.domain.Contact
-import com.example.whichcontacts.domain.ContactsCountResult
+import com.francescobonizzi.howmanycontacts.domain.Contact
+import com.francescobonizzi.howmanycontacts.domain.ContactsCountResult
 import java.lang.Exception
 
 class AppContactsCounter {

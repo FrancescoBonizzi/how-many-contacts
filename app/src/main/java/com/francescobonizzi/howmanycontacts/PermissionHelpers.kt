@@ -1,4 +1,4 @@
-package com.example.whichcontacts
+package com.francescobonizzi.howmanycontacts
 
 import android.Manifest
 import android.app.Activity

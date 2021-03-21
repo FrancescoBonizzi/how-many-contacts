@@ -1,11 +1,11 @@
-package com.example.whichcontacts.logging
+package com.francescobonizzi.howmanycontacts.logging
 
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.crashlytics.FirebaseCrashlytics
-import com.example.whichcontacts.BuildConfig
+import com.francescobonizzi.howmanycontacts.BuildConfig
 
 /** Logger che scrive in LogCat e su FirebaseCrashlytics */
 class DebugAndFireBaseLogger

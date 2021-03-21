@@ -1,11 +1,11 @@
-package com.example.whichcontacts
+package com.francescobonizzi.howmanycontacts
 
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.whichcontacts.databinding.ActivityMainBinding
-import com.example.whichcontacts.logging.DebugAndFireBaseLogger
-import com.example.whichcontacts.logic.AppContactsCounter
+import com.francescobonizzi.howmanycontacts.databinding.ActivityMainBinding
+import com.francescobonizzi.howmanycontacts.logging.DebugAndFireBaseLogger
+import com.francescobonizzi.howmanycontacts.logic.AppContactsCounter
 
 class MainActivity : AppCompatActivity() {
 

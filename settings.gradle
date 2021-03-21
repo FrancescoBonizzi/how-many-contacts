@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "WhichContacts"
+rootProject.name = "HowManyContacts"
