@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="activity_main_btnRefresh_background_color">#3f96d0</color>
-    <color name="activity_main_btnRefresh_text_color">#ffffff</color>
-    <color name="activity_main_background">#0e1621</color>
+    <color name="primary">#ffffff</color>
+    <color name="background">#0e1621</color>
 </resources>

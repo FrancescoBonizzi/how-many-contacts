@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/activity_main_background"
+    android:background="@color/background"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -32,7 +32,7 @@
         android:backgroundTint="@color/activity_main_btnRefresh_background_color"
         android:drawableTop="@drawable/ic_refresh"
         android:text="@string/activity_main_btnRefresh"
-        android:textColor="@color/activity_main_btnRefresh_text_color"
+        android:textColor="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtContactsCount" />
