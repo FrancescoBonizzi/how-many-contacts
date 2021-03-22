@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quanti contatti</string>
+    <string name="activity_main_btnRefresh">Aggiorna</string>
+    <string name="activity_main_contacts_percentage_template">%d contatti (%d%%)</string>
+    <string name="activity_main_contacts_count_template">%d contatti totale</string>
+</resources>
