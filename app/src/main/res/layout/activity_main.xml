@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/activity_main_background"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title"
-        android:textSize="30sp"
-        android:layout_marginTop="5dp"
-        android:textAlignment="center"/>
+    <!-- TODO: attribuzione per l'autore: <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
 
     <!-- TODO Metti il pulsantino in alto come nelle app android,
     TODO INFO, THIS APP WON'T GRAB OR STORE YOUR PERSONAL DATA -->
@@ -22,127 +17,171 @@
         android:id="@+id/txtContactsCount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:layout_margin="20dp"
-        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_bigger"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="10 contacts" />
+
     <Button
         android:id="@+id/btnRefresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Refresh" />
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/activity_main_btnRefresh_background_color"
+        android:drawableTop="@drawable/ic_refresh"
+        android:text="@string/activity_main_btnRefresh"
+        android:textColor="@color/activity_main_btnRefresh_text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtContactsCount" />
 
-<!--    TODO: fai una recycler view mettendo tu gli item a mano, ma ordinato per %-->
+    <!--    TODO: fai una recycler view mettendo tu gli item a mano, ma ordinato per %-->
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:orientation="horizontal"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layoutTelegram"
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/messaging_app_container_margin"
+        app:cardCornerRadius="@dimen/activity_main_card_corner_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRefresh">
 
-        <ImageView
-            android:id="@+id/imageViewTelegram"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/logo_telegram"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txtTelegramContactsCount"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="30 contatti, 20%"
-            android:layout_marginStart="10dp"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewTelegram"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_margin="@dimen/messaging_app_container_margin">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Telegram"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewTelegram"
-            app:layout_constraintStart_toStartOf="@+id/imageViewTelegram"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewTelegram" />
+            <ImageView
+                android:id="@+id/imageViewTelegram"
+                android:layout_width="@dimen/messaging_app_icon"
+                android:layout_height="@dimen/messaging_app_icon"
+                android:padding="@dimen/activity_main_messaging_app_icon_padding"
+                android:src="@drawable/logo_telegram"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/txtTelegramContactsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/count_text_margin_start"
+                android:textSize="@dimen/text_size_default"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewTelegram"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="30 contacts, 20%" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:orientation="horizontal"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Telegram"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewTelegram"
+                app:layout_constraintStart_toStartOf="@+id/imageViewTelegram"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewTelegram" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layoutSignal"
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/messaging_app_container_margin"
+        app:cardCornerRadius="@dimen/activity_main_card_corner_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTelegram">
 
-        <ImageView
-            android:id="@+id/imageViewWhatsApp"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/logo_whatsaspp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txtWhatsAppContactsCount"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="30 contatti, 20%"
-            android:layout_marginStart="10dp"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewWhatsApp"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_margin="@dimen/messaging_app_container_margin">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="WhatsApp"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewWhatsApp"
-            app:layout_constraintStart_toStartOf="@+id/imageViewWhatsApp"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewWhatsApp" />
+            <ImageView
+                android:id="@+id/imageViewSignal"
+                android:layout_width="@dimen/messaging_app_icon"
+                android:padding="@dimen/activity_main_messaging_app_icon_padding"
+                android:layout_height="@dimen/messaging_app_icon"
+                android:src="@drawable/logo_signal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/txtSignalContactsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/count_text_margin_start"
+                android:textSize="@dimen/text_size_default"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewSignal"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="30 contacts, 20%" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:orientation="horizontal"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Signal"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewSignal"
+                app:layout_constraintStart_toStartOf="@+id/imageViewSignal"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewSignal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layoutWhatsApp"
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/messaging_app_container_margin"
+        app:cardCornerRadius="@dimen/activity_main_card_corner_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutSignal">
 
-        <ImageView
-            android:id="@+id/imageViewSignal"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/logo_signal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txtSignalContactsCount"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="30 contatti, 20%"
-            android:layout_marginStart="10dp"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageViewSignal"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_margin="@dimen/messaging_app_container_margin">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Signal"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewSignal"
-            app:layout_constraintStart_toStartOf="@+id/imageViewSignal"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewSignal" />
+            <ImageView
+                android:id="@+id/imageViewWhatsApp"
+                android:layout_width="@dimen/messaging_app_icon"
+                android:layout_height="@dimen/messaging_app_icon"
+                android:padding="@dimen/activity_main_messaging_app_icon_padding"
+                android:src="@drawable/logo_whatsapp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/txtWhatsAppContactsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/count_text_margin_start"
+                android:textSize="@dimen/text_size_default"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewWhatsApp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="30 contact, 20%" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WhatsApp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewWhatsApp"
+                app:layout_constraintStart_toStartOf="@+id/imageViewWhatsApp"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewWhatsApp" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-</LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

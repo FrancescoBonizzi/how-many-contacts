@@ -3,6 +3,7 @@ package com.francescobonizzi.howmanycontacts.logic
 import android.app.Activity
 import android.content.ContentResolver
 import android.provider.ContactsContract
+import androidx.core.database.getStringOrNull
 import com.francescobonizzi.howmanycontacts.domain.Contact
 import com.francescobonizzi.howmanycontacts.domain.ContactsCountResult
 
@@ -21,11 +22,16 @@ class AppContactsCounter {
 
         contactsQuery?.use { c ->
             while (c.moveToNext()) {
-                val accountDisplayName = c.getString(0)
-                val accountType = c.getString(1)
+                val accountDisplayName = c.getStringOrNull(0)
+                val accountType = c.getStringOrNull(1)
+
+                if (accountDisplayName == null) {
+                    continue
+                }
+
                 contacts.add(Contact(
                     displayName = accountDisplayName,
-                    type = accountType
+                    type = accountType ?: ""
                 ))
             }
         }

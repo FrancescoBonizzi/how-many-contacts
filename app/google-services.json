@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "94701724827",
+    "project_id": "how-many-contacts",
+    "storage_bucket": "how-many-contacts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94701724827:android:efe8ec13fa9f2e081cd23e",
+        "android_client_info": {
+          "package_name": "com.francescobonizzi.howmanycontacts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94701724827-ge0imt0ov253im1qeg83803d64l0atmp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEurqNvuwT9vxRsufX9OGJxwjJBAMbCIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94701724827-ge0imt0ov253im1qeg83803d64l0atmp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

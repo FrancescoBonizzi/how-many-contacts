@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">How Many Contacts</string>
     <string name="title">How many contacts have...?</string>
+    <string name="activity_main_btnRefresh">Refresh</string>
 </resources>

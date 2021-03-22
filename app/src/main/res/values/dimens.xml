@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="messaging_app_icon">64dp</dimen>
+    <dimen name="messaging_app_container_margin">15dp</dimen>
+    <dimen name="text_size_default">20sp</dimen>
+    <dimen name="text_size_bigger">25sp</dimen>
+    <dimen name="count_text_margin_start">15dp</dimen>
+    <dimen name="activity_main_card_corner_radius">10sp</dimen>
+    <dimen name="activity_main_messaging_app_icon_padding">5dp</dimen>
+</resources>
