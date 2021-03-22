@@ -10,4 +10,5 @@
     <color name="activity_main_btnRefresh_background_color">#ffffff</color>
     <color name="activity_main_btnRefresh_text_color">#1689fc</color>
     <color name="activity_main_background">#dde7eb</color>
+    <color name="error">#ec3133</color>
 </resources>

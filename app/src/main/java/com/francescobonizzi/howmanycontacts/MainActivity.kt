@@ -3,7 +3,6 @@ package com.francescobonizzi.howmanycontacts
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.francescobonizzi.howmanycontacts.databinding.ActivityMainBinding
 import com.francescobonizzi.howmanycontacts.logging.DebugAndFireBaseLogger
@@ -27,16 +26,27 @@ class MainActivity : AppCompatActivity() {
         refreshData()
     }
 
-    private fun showLoading() {
+    private fun hideMainContent() {
+        binding.txtContactsCount.visibility = View.GONE
         binding.layoutSignal.visibility = View.GONE
         binding.layoutTelegram.visibility = View.GONE
         binding.layoutWhatsApp.visibility = View.GONE
     }
 
-    private fun hideLoading() {
+    private fun showMainContent() {
+        binding.txtContactsCount.visibility = View.VISIBLE
         binding.layoutSignal.visibility = View.VISIBLE
         binding.layoutTelegram.visibility = View.VISIBLE
         binding.layoutWhatsApp.visibility = View.VISIBLE
+    }
+
+    private fun showError(message : String) {
+        binding.txtError.text = message
+        binding.txtError.visibility = View.VISIBLE
+    }
+
+    private fun hideError() {
+        binding.txtError.visibility = View.GONE
     }
 
     override fun onRequestPermissionsResult(
@@ -59,37 +69,34 @@ class MainActivity : AppCompatActivity() {
 
         } catch (ex: Exception) {
             logger.error(ex)
-            // Mostrare l'errore da qualche parte... farlo meglio, nascondendo il risultato e mettendo il messaggio bello grosso
-            Toast.makeText(this, ex.message, Toast.LENGTH_SHORT).show()
+            showError(ex.message!!)
+            hideMainContent()
         }
     }
 
     private fun refreshData() {
         try {
 
-            showLoading()
+            hideMainContent()
 
             if (!PermissionHelpers.hasOrAskReadContactsPermission(this)) {
-                return
+                throw Exception("Without read contacts permission I cannot count your contacts")
             }
 
             val appContactsCounter = AppContactsCounter()
             val contactsCountResult = appContactsCounter.countContacts(this)
 
-            binding.txtContactsCount.text = "${contactsCountResult.allContactsCount} contacts"
-            binding.txtTelegramContactsCount.text =
-                "${contactsCountResult.telegramContactsCount} contacts (${contactsCountResult.telegramContactsPercentage}%)"
-            binding.txtWhatsAppContactsCount.text =
-                "${contactsCountResult.whatsAppContactsCount} contacts (${contactsCountResult.whatsAppContactsPercentage}%)"
-            binding.txtSignalContactsCount.text =
-                "${contactsCountResult.signalContactsCount} contacts (${contactsCountResult.signalContactsPercentage}%)"
+            binding.txtContactsCount.text = getString(R.string.activity_main_contacts_count_template, contactsCountResult.allContactsCount)
+            binding.txtTelegramContactsCount.text = getString(R.string.activity_main_contacts_percentage_template, contactsCountResult.telegramContactsCount, contactsCountResult.telegramContactsPercentage)
+            binding.txtSignalContactsCount.text =getString(R.string.activity_main_contacts_percentage_template, contactsCountResult.signalContactsCount, contactsCountResult.signalContactsPercentage)
+            binding.txtWhatsAppContactsCount.text =getString(R.string.activity_main_contacts_percentage_template, contactsCountResult.whatsAppContactsCount, contactsCountResult.whatsAppContactsPercentage)
 
-            hideLoading()
+            showMainContent()
 
         } catch (ex: Exception) {
             logger.error(ex)
-            // Mostrare l'errore da qualche parte... farlo meglio, nascondendo il risultato e mettendo il messaggio bello grosso
-            Toast.makeText(this, ex.message, Toast.LENGTH_SHORT).show()
+            showError(ex.message!!)
+            hideMainContent()
         }
     }
 
