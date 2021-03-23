@@ -3,5 +3,5 @@
     <string name="app_name">Quanti contatti</string>
     <string name="activity_main_btnRefresh">Aggiorna</string>
     <string name="activity_main_contacts_percentage_template">%d contatti (%d%%)</string>
-    <string name="activity_main_contacts_count_template">%d contatti totale</string>
+    <string name="activity_main_contacts_count_template">%d contatti totali</string>
 </resources>

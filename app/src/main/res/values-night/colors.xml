@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="activity_main_btnRefresh_background_color">#3f96d0</color>
-    <color name="primary">#ffffff</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="activity_main_btnRefresh_background_color">#0e1621</color>
+    <color name="primary">#1689fc</color>
+    <color name="secondary">#2aa2de</color>
+    <color name="status_bar">#0a3259</color>
     <color name="background">#0e1621</color>
+    <color name="card_background">#3d3d3d</color>
+    <color name="error">#ec3133</color>
+    <color name="common_text">#d6d6d6</color>
 </resources>

@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-
     <color name="activity_main_btnRefresh_background_color">#ffffff</color>
     <color name="primary">#1689fc</color>
     <color name="secondary">#2aa2de</color>
-    <color name="background">#dde7eb</color>
+    <color name="status_bar">#1689fc</color>
+    <color name="background">#ededed</color>
+    <color name="card_background">#ffffff</color>
     <color name="error">#ec3133</color>
+    <color name="common_text">#474747</color>
 </resources>
