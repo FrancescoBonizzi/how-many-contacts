@@ -3,4 +3,5 @@
     <string name="activity_main_btnRefresh">Refresh</string>
     <string name="activity_main_contacts_percentage_template">%d contacts (%d%%)</string>
     <string name="activity_main_contacts_count_template">%d total contacts</string>
+    <string name="activity_main_read_contact_permission_denied">Without read contacts permission I cannot count your contacts</string>
 </resources>

@@ -4,4 +4,5 @@
     <string name="activity_main_btnRefresh">Aggiorna</string>
     <string name="activity_main_contacts_percentage_template">%d contatti (%d%%)</string>
     <string name="activity_main_contacts_count_template">%d contatti totali</string>
+    <string name="activity_main_read_contact_permission_denied">Senza il permesso di lettura sui contatti, non posso contarli!</string>
 </resources>

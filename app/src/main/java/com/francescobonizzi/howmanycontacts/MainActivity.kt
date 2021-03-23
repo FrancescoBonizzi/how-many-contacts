@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             ) {
                 refreshData()
             } else {
-                throw Exception("Without read contacts permission I cannot count your contacts")
+                throw Exception(getString(R.string.activity_main_read_contact_permission_denied))
             }
 
         } catch (ex: Exception) {
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             hideMainContent()
 
             if (!PermissionHelpers.hasOrAskReadContactsPermission(this)) {
-                throw Exception("Without read contacts permission I cannot count your contacts")
+                throw Exception(getString(R.string.activity_main_read_contact_permission_denied))
             }
 
             val appContactsCounter = AppContactsCounter()
