@@ -6,4 +6,4 @@ This contacts counter App is **totally free, without any ads**. I made it for my
 
 ### Feel free to contribute!
 
-[](/store-assets/ENG-Promotional.png)
+![Promotional image](/store-assets/ENG-Promotional.png)
