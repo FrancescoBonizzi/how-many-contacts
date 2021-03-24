@@ -12,3 +12,7 @@ This contacts counter App is **totally free, without any ads**. I made it for my
 ### Feel free to contribute!
 
 ![Promotional image](/store-assets/ENG-Promotional.png)
+
+---
+
+If you like my work, please consider to [offer me an espresso!](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=DTT7P8N3TV7N6&currency_code=EUR&source=url) ;-)
