@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         binding.layoutWhatsApp.visibility = View.VISIBLE
     }
 
-    private fun showError(message : String) {
+    private fun showError(message: String) {
         binding.txtError.text = message
         binding.txtError.visibility = View.VISIBLE
     }
@@ -86,10 +86,27 @@ class MainActivity : AppCompatActivity() {
             val appContactsCounter = AppContactsCounter()
             val contactsCountResult = appContactsCounter.countContacts(this)
 
-            binding.txtContactsCount.text = getString(R.string.activity_main_contacts_count_template, contactsCountResult.allContactsCount)
-            binding.txtTelegramContactsCount.text = getString(R.string.activity_main_contacts_percentage_template, contactsCountResult.telegramContactsCount, contactsCountResult.telegramContactsPercentage)
-            binding.txtSignalContactsCount.text =getString(R.string.activity_main_contacts_percentage_template, contactsCountResult.signalContactsCount, contactsCountResult.signalContactsPercentage)
-            binding.txtWhatsAppContactsCount.text =getString(R.string.activity_main_contacts_percentage_template, contactsCountResult.whatsAppContactsCount, contactsCountResult.whatsAppContactsPercentage)
+            if (contactsCountResult.allContactsCount == 0) {
+                showNoContactsMessage()
+                return
+            }
+
+            binding.txtContactsCount.text = getString(
+                R.string.activity_main_contacts_count_template,
+                contactsCountResult.allContactsCount
+            )
+            binding.txtTelegramContactsCount.text = formatContactsCount(
+                contactsCountResult.telegramContactsCount,
+                contactsCountResult.telegramContactsPercentage
+            )
+            binding.txtSignalContactsCount.text = formatContactsCount(
+                contactsCountResult.signalContactsCount,
+                contactsCountResult.signalContactsPercentage
+            )
+            binding.txtWhatsAppContactsCount.text = formatContactsCount(
+                contactsCountResult.whatsAppContactsCount,
+                contactsCountResult.whatsAppContactsPercentage
+            )
 
             showMainContent()
 
@@ -98,6 +115,23 @@ class MainActivity : AppCompatActivity() {
             showError(ex.message!!)
             hideMainContent()
         }
+    }
+
+    private fun showNoContactsMessage() {
+        showError(getString(R.string.activity_main_no_contacts_at_all))
+        hideMainContent()
+    }
+
+    private fun formatContactsCount(contactsCount: Int, contactsCountPercentage: Int): String {
+        if (contactsCount > 0) {
+            return getString(
+                R.string.activity_main_contacts_percentage_template,
+                contactsCount,
+                contactsCountPercentage
+            )
+        }
+
+        return getString(R.string.activity_main_0_contacts)
     }
 
 }

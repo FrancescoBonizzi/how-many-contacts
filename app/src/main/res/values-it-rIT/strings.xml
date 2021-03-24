@@ -5,4 +5,6 @@
     <string name="activity_main_contacts_percentage_template">%d contatti (%d%%)</string>
     <string name="activity_main_contacts_count_template">%d contatti totali</string>
     <string name="activity_main_read_contact_permission_denied">Senza il permesso di lettura sui contatti, non posso contarli!</string>
+    <string name="activity_main_no_contacts_at_all">Sembra che non ci siano contatti in questo telefono.\n(Stai usando un emulatore :-) ?)</string>
+    <string name="activity_main_0_contacts">Nessuno!</string>
 </resources>

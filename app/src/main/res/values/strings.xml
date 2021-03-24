@@ -4,4 +4,6 @@
     <string name="activity_main_contacts_percentage_template">%d contacts (%d%%)</string>
     <string name="activity_main_contacts_count_template">%d total contacts</string>
     <string name="activity_main_read_contact_permission_denied">Without read contacts permission I cannot count your contacts</string>
+    <string name="activity_main_no_contacts_at_all">It seems you don\'t have any contacts.\n(Are you using an emulator :-) ?)</string>
+    <string name="activity_main_0_contacts">Nobody!</string>
 </resources>
