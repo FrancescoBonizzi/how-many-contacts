@@ -48,22 +48,10 @@ class AppContactsCounter {
             // Count only the unique contact name
             allContactsCount = allContacts.distinctBy { it.displayName }.count(),
             telegramContactsCount = allContacts.count {
-                it.type.contains(
-                    "telegram",
-                    ignoreCase = true
-                )
+                it.type == "org.telegram.messenger"
             },
             whatsAppContactsCount = allContacts.count {
-                it.type.contains(
-                    "whatsapp",
-                    ignoreCase = true
-                )
-            },
-            signalContactsCount = allContacts.count {
-                it.type.contains(
-                    "securesms",
-                    ignoreCase = true
-                )
+                it.type == "com.whatsapp"
             }
         )
     }

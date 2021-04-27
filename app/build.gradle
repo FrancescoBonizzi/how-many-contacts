@@ -15,7 +15,7 @@ android {
         applicationId "com.francescobonizzi.howmanycontacts"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 1
+        versionCode 3
         versionName "v1." + new Date().format('dd.MM.yyyy')
     }
 

@@ -28,14 +28,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun hideMainContent() {
         binding.txtContactsCount.visibility = View.GONE
-        binding.layoutSignal.visibility = View.GONE
+   //     binding.layoutSignal.visibility = View.GONE
         binding.layoutTelegram.visibility = View.GONE
         binding.layoutWhatsApp.visibility = View.GONE
     }
 
     private fun showMainContent() {
         binding.txtContactsCount.visibility = View.VISIBLE
-        binding.layoutSignal.visibility = View.VISIBLE
+    //    binding.layoutSignal.visibility = View.VISIBLE
         binding.layoutTelegram.visibility = View.VISIBLE
         binding.layoutWhatsApp.visibility = View.VISIBLE
     }
@@ -98,10 +98,6 @@ class MainActivity : AppCompatActivity() {
             binding.txtTelegramContactsCount.text = formatContactsCount(
                 contactsCountResult.telegramContactsCount,
                 contactsCountResult.telegramContactsPercentage
-            )
-            binding.txtSignalContactsCount.text = formatContactsCount(
-                contactsCountResult.signalContactsCount,
-                contactsCountResult.signalContactsPercentage
             )
             binding.txtWhatsAppContactsCount.text = formatContactsCount(
                 contactsCountResult.whatsAppContactsCount,
